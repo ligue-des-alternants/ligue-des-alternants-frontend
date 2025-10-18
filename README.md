@@ -1,5 +1,8 @@
 # Ligue des Alternants - Frontend
 
+[![CI](https://github.com/Fixito/lda-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Fixito/lda-frontend/actions/workflows/ci.yml)
+[![Commitlint](https://github.com/Fixito/lda-frontend/actions/workflows/commitlint.yml/badge.svg)](https://github.com/Fixito/lda-frontend/actions/workflows/commitlint.yml)
+
 Site pour la Ligue des Alternants, construite avec Astro, React, et Tailwind CSS.
 
 ## 🚀 Stack Technique
@@ -105,7 +108,38 @@ chore(deps): upgrade dependencies
 git commit --no-verify -m "message"
 ```
 
-## 🔧 Configuration VS Code
+## � CI/CD
+
+Le projet utilise **GitHub Actions** pour automatiser les vérifications de qualité.
+
+### Workflows
+
+#### CI (`ci.yml`)
+
+Déclenché à chaque push sur `main` et sur les pull requests :
+
+1. **Lint & Format Check**
+   - ✅ Vérifie le code avec ESLint
+   - ✅ Vérifie le formatage avec Prettier
+2. **Build**
+   - ✅ Construit le projet
+   - ✅ Upload les artifacts (dist/)
+
+#### Commitlint (`commitlint.yml`)
+
+Déclenché sur les pull requests :
+
+- ✅ Valide tous les messages de commit de la PR
+- ✅ Garantit le respect des Conventional Commits
+
+### Status Badges
+
+Les badges en haut du README indiquent l'état des workflows :
+
+- 🟢 **Passing** - Tous les tests passent
+- 🔴 **Failing** - Des erreurs ont été détectées
+
+## �🔧 Configuration VS Code
 
 Le projet inclut des configurations VS Code recommandées :
 
