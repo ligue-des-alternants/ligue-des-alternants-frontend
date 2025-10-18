@@ -1,8 +1,5 @@
 # Ligue des Alternants - Frontend
 
-[![CI](https://github.com/Fixito/lda-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Fixito/lda-frontend/actions/workflows/ci.yml)
-[![Commitlint](https://github.com/Fixito/lda-frontend/actions/workflows/commitlint.yml/badge.svg)](https://github.com/Fixito/lda-frontend/actions/workflows/commitlint.yml)
-
 Site pour la Ligue des Alternants, construite avec Astro, React, et Tailwind CSS.
 
 ## 🚀 Stack Technique
@@ -108,7 +105,7 @@ chore(deps): upgrade dependencies
 git commit --no-verify -m "message"
 ```
 
-## � CI/CD
+## CI/CD
 
 Le projet utilise **GitHub Actions** pour automatiser les vérifications de qualité.
 
@@ -132,14 +129,7 @@ Déclenché sur les pull requests :
 - ✅ Valide tous les messages de commit de la PR
 - ✅ Garantit le respect des Conventional Commits
 
-### Status Badges
-
-Les badges en haut du README indiquent l'état des workflows :
-
-- 🟢 **Passing** - Tous les tests passent
-- 🔴 **Failing** - Des erreurs ont été détectées
-
-## �🔧 Configuration VS Code
+## 🔧 Configuration VS Code
 
 Le projet inclut des configurations VS Code recommandées :
 
