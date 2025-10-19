@@ -1,8 +1,11 @@
 ---
+import HeroSection from '@/components/astro/hero/hero-section.astro';
 import MainLayout from '@/layouts/main-layout.astro';
 
 const title = 'Ligue des Alternants';
 const description = 'Site pour la Ligue des Alternants';
 ---
 
-<MainLayout title={title} description={description} />
+<MainLayout title={title} description={description}>
+  <HeroSection />
+</MainLayout>

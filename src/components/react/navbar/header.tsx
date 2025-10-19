@@ -20,12 +20,12 @@ export default function Header() {
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Navigation principale"
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 -mx-4.5 p-1.5">
             <span className="sr-only">Ligue des Alternants - Retour à l'accueil</span>
-            <img src="/logo.png" alt="Logo Ligue des Alternants" className="h-11 w-auto" />
+            <img src="/logo.png" alt="Logo Ligue des Alternants" className="h-12 w-auto" />
           </a>
         </div>
 

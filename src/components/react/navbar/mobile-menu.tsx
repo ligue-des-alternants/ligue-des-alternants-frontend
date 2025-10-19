@@ -58,16 +58,18 @@ export default function MobileMenu({ onCloseMenu }: MobileMenuProps) {
   return (
     <div className="lg:hidden" role="dialog" aria-modal="true" aria-label="Menu mobile">
       <div className="fixed inset-0 z-50 bg-black/50" onClick={onCloseMenu} aria-hidden="true" />
+
       <div
         id="mobile-menu"
         ref={menuRef}
         className="bg-background sm:ring-border fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-sm sm:ring-1"
       >
         <div className="flex items-center justify-between">
-          <a href="/" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 -mx-4.5 p-1.5">
             <span className="sr-only">Ligue des Alternants - Retour à l'accueil</span>
-            <img src="/logo.png" alt="Logo Ligue des Alternants" className="h-11 w-auto" />
+            <img src="/logo.png" alt="Logo Ligue des Alternants" className="h-12 w-auto" />
           </a>
+
           <button
             ref={closeButtonRef}
             type="button"
@@ -78,6 +80,7 @@ export default function MobileMenu({ onCloseMenu }: MobileMenuProps) {
             <X aria-hidden="true" className="size-6" />
           </button>
         </div>
+
         <div className="mt-6 flow-root">
           <div className="-my-6">
             <div className="space-y-2 py-6">
@@ -99,7 +102,7 @@ const NavItem = ({ href, name }: { href: string; name: string }) => {
   return (
     <a
       key={name}
-      className="text-foreground hover:bg-accent hover:text-accent-foreground block rounded-lg px-3 py-2 text-base/7 font-semibold transition-colors"
+      className="text-foreground hover:bg-accent hover:text-accent-foreground -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold transition-colors"
       href={href}
       aria-current={isActive ? 'page' : undefined}
     >
