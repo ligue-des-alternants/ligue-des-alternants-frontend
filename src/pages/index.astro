@@ -1,14 +1,17 @@
 ---
 import FeaturesSection from '@/components/astro/features-section/index.astro';
 import HeroSection from '@/components/astro/hero/index.astro';
+import NewsSection from '@/components/astro/news-section/index.astro';
 
 import MainLayout from '@/layouts/main-layout.astro';
 
-const title = 'Ligue des Alternants';
-const description = 'Site pour la Ligue des Alternants';
+const title = 'Ligue des Alternants | Accompagner, aider et valoriser les études en alternance';
+const description =
+  'Rejoignez la Ligue des Alternants : un réseau solidaire pour réussir votre alternance. Guides pratiques, accompagnement personnalisé et mise en relation avec des entreprises engagées dans la formation professionnelle.';
 ---
 
 <MainLayout title={title} description={description}>
   <HeroSection />
   <FeaturesSection />
+  <NewsSection />
 </MainLayout>

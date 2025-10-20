@@ -1,0 +1,34 @@
+---
+import type { NewsItem } from './data';
+
+interface Props {
+  item: NewsItem;
+}
+
+const { item } = Astro.props;
+---
+
+<article
+  class="flex max-w-xl flex-col items-start justify-between"
+  itemscope
+  itemtype="https://schema.org/NewsArticle"
+>
+  <div class="flex items-center gap-x-4 text-xs">
+    <time datetime={item.datetime} class="text-muted-foreground" itemprop="datePublished">
+      {item.date}
+    </time>
+  </div>
+
+  <div class="group relative grow">
+    <h3 class="text-foreground group-hover:text-muted-foreground mt-3 text-lg/6 font-semibold">
+      <a href={item.href}>
+        <span class="absolute inset-0" aria-hidden="true"></span>
+        <span itemprop="headline">{item.title}</span>
+      </a>
+    </h3>
+
+    <p class="text-muted-foreground mt-5 line-clamp-3 text-sm/6" itemprop="description">
+      {item.description}
+    </p>
+  </div>
+</article>
