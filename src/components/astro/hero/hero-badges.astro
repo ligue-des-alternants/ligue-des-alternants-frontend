@@ -1,0 +1,13 @@
+---
+const badges = [{ label: '100% gratuit' }, { label: 'Communauté active' }];
+---
+
+<div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+  {
+    badges.map((badge) => (
+      <span class="ring-border text-muted-foreground rounded-full px-3 py-1 text-sm/6 font-medium ring-1 ring-inset">
+        {badge.label}
+      </span>
+    ))
+  }
+</div>
