@@ -1,4 +1,6 @@
 ---
+import Head from '@/components/astro/head.astro';
+
 import Footer from '@/components/react/footer';
 import Header from '@/components/react/navbar/header';
 
@@ -10,34 +12,7 @@ const { title, description } = Astro.props;
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
-    <!-- Primary Meta Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="alternance, formation professionnelle, réseau alternants, études en alternance, apprentissage, orientation professionnelle, aide alternants, communauté alternants"
-    />
-    <meta name="author" content="Ligue des Alternants" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:locale" content="fr_FR" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href={Astro.url} />
+    <Head title={title} description={description} />
   </head>
   <body class="grid min-h-dvh grid-rows-[1fr_auto]">
     <Header client:idle />
