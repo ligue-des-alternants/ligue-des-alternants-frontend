@@ -1,4 +1,6 @@
 ---
+import { cn } from '@/lib/utils';
+
 import Item from './item.astro';
 
 import type { Item as ItemType } from './types';
@@ -6,11 +8,12 @@ import type { Item as ItemType } from './types';
 interface Props {
   items: ItemType[];
   Icon?: (props: { class?: string }) => unknown;
+  class?: string;
 }
 
-const { items, Icon: defaultIcon } = Astro.props;
+const { items, Icon: defaultIcon, class: className } = Astro.props;
 ---
 
-<ul class="mt-8 max-w-xl space-y-8">
+<ul class:list={cn('mt-8 max-w-xl space-y-8', className)}>
   {items.map((item) => <Item {...item} Icon={item.Icon || defaultIcon} />)}
 </ul>

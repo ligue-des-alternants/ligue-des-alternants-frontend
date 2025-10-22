@@ -1,6 +1,7 @@
 ---
 import { Activity } from '@lucide/astro';
 
+import ItemList from '@/components/astro/ui/item-list/index.astro';
 import Section from '../ui/section.astro';
 
 const objectives = [
@@ -29,17 +30,5 @@ const objectives = [
 ---
 
 <Section title="Nos objectifs">
-  <ul class="text-secondary-foreground mt-8 max-w-xl space-y-8">
-    {
-      objectives.map(({ title, description }) => (
-        <li class="flex gap-x-3 text-base/7">
-          <Activity class="text-primary h-[1lh] w-6 flex-none" />
-          <span>
-            <strong class="text-foreground font-semibold">{title}.</strong>
-            {description}
-          </span>
-        </li>
-      ))
-    }
-  </ul>
+  <ItemList items={objectives} Icon={Activity} class="text-secondary-foreground" />
 </Section>

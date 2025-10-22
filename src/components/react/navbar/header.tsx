@@ -50,7 +50,7 @@ export default function Header({ currentPath }: HeaderProps) {
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
 
-        {isMobileMenuOpen && <MobileMenu onCloseMenu={handleCloseMenu} />}
+        {isMobileMenuOpen && <MobileMenu currentPath={currentPath} onCloseMenu={handleCloseMenu} />}
       </nav>
     </header>
   );
@@ -61,11 +61,12 @@ const NavItems = ({ currentPath }: { currentPath: string }) => {
     <div className="hidden lg:flex lg:gap-x-6">
       {navigation.map(({ href, name }) => {
         const isActive = currentPath === href;
+
         return (
           <a
             key={name}
             href={href}
-            className="text-foreground hover:bg-accent hover:text-accent-foreground rounded-lg px-3 py-2 text-base/6 font-semibold transition-colors"
+            className="text-foreground hover:bg-accent hover:text-accent-foreground rounded-lg px-3 py-2 text-sm/6 font-semibold transition-colors"
             aria-current={isActive ? 'page' : undefined}
           >
             {name}

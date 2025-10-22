@@ -6,9 +6,10 @@ import { navigation } from './data';
 
 interface MobileMenuProps {
   onCloseMenu: () => void;
+  currentPath: string;
 }
 
-export default function MobileMenu({ onCloseMenu }: MobileMenuProps) {
+export default function MobileMenu({ currentPath, onCloseMenu }: MobileMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -85,7 +86,7 @@ export default function MobileMenu({ onCloseMenu }: MobileMenuProps) {
           <div className="-my-6">
             <div className="space-y-2 py-6">
               {navigation.map(({ href, name }) => {
-                return <NavItem key={name} href={href} name={name} />;
+                return <NavItem key={name} currentPath={currentPath} href={href} name={name} />;
               })}
             </div>
           </div>
@@ -95,8 +96,15 @@ export default function MobileMenu({ onCloseMenu }: MobileMenuProps) {
   );
 }
 
-const NavItem = ({ href, name }: { href: string; name: string }) => {
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
+const NavItem = ({
+  currentPath,
+  href,
+  name,
+}: {
+  currentPath: string;
+  href: string;
+  name: string;
+}) => {
   const isActive = currentPath === href;
 
   return (

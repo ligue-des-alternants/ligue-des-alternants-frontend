@@ -6,7 +6,7 @@ interface Props {
   description: string;
   linkText?: string;
   linkHref?: string;
-  class?: string; // optionnel si tu veux ajouter des classes supplémentaires
+  class?: string;
 }
 const { title, description, linkText, linkHref, class: className } = Astro.props;
 ---
@@ -24,7 +24,7 @@ const { title, description, linkText, linkHref, class: className } = Astro.props
     {
       linkText && linkHref ? (
         <div class="mt-10">
-          <a href={linkHref} class="text-primary hover:text-primary/60 text-base font-semibold">
+          <a href={linkHref} class="text-primary hover:text-primary/60 text-sm/6 font-semibold">
             {linkText} <span aria-hidden="true">→</span>
           </a>
         </div>
