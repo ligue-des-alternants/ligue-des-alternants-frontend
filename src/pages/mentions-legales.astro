@@ -1,0 +1,187 @@
+---
+import PageHeader from '@/components/astro/ui/page-header.astro';
+import Section from '@/components/astro/ui/section.astro';
+
+import Background from '@/layouts/background.astro';
+import MainLayout from '@/layouts/main-layout.astro';
+
+const title = 'La Ligue des Alternants | Mentions légales';
+const description =
+  'Mentions légales de La Ligue des Alternants, association dédiée aux alternants en France.';
+
+const year = new Date().getFullYear();
+---
+
+<MainLayout title={title} description={description}>
+  <div class="page">
+    <Background />
+
+    <div class="text-muted-foreground container max-w-2xl text-base/7 lg:max-w-7xl">
+      <div class="max-w-3xl">
+        <PageHeader title="Mentions légales" />
+
+        <Section title="1. Éditeur du site">
+          <ul class="mt-8 max-w-xl space-y-4 pl-4">
+            <li>
+              <strong class="text-foreground font-semibold">Nom de l'association :</strong> Ligue des
+              Alternants
+            </li>
+
+            <li>
+              <strong class="text-foreground font-semibold">Forme juridique :</strong> Association déclarée
+              (loi 1901)
+            </li>
+
+            <li>
+              <strong class="text-foreground font-semibold">Siège social :</strong> 102 rue des Tourterelles,
+              38570 Le Cheylas
+            </li>
+
+            <li><strong class="text-foreground font-semibold">Numéro RNA :</strong> W381030065</li>
+
+            <li><strong class="text-foreground font-semibold">SIRET :</strong> 99095633600012</li>
+
+            <li>
+              <strong class="text-foreground font-semibold">Adresse e-mail :</strong>
+              <a
+                href="mailto:liguedesalternants@gmail.com"
+                class="text-primary hover:text-primary/60 font-semibold"
+                >liguedesalternants@gmail.com</a
+              >
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="2. Directeur de la publication">
+          <p class="mt-6">
+            Le directeur de la publication du site est <strong>Ligue des Alternants</strong>.
+          </p>
+        </Section>
+
+        <Section title="3. Hébergement">
+          <ul class="mt-8 max-w-xl space-y-4 pl-4">
+            <li><strong class="text-foreground font-semibold">Hébergeur :</strong> PulseHeberg</li>
+
+            <li>
+              <strong class="text-foreground font-semibold">Adresse :</strong> 9 Boulevard de Strasbourg,
+              83000 Toulon, France
+            </li>
+
+            <li>
+              <strong class="text-foreground font-semibold">Site web :</strong>
+              <a
+                href="https://www.pulseheberg.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-foreground hover:text-primary underline"
+                aria-label="Visiter le site de PulseHeberg (nouvel onglet)">www.pulseheberg.com</a
+              >
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="4. Propriété intellectuelle">
+          <p class="mt-6">
+            L'ensemble du contenu présent sur ce site (textes, images, graphismes, logo, icônes,
+            etc.) est la propriété exclusive de l'association <strong
+              class="text-foreground font-semibold">Ligue des Alternants</strong
+            >, sauf mentions contraires. Toute reproduction, représentation, modification,
+            publication ou adaptation, totale ou partielle, est interdite sans autorisation écrite
+            préalable.
+          </p>
+
+          <p class="mt-6">
+            Les icônes utilisées sur ce site proviennent de deux sources ouvertes :
+          </p>
+
+          <ul class="marker:text-foreground mt-8 max-w-xl space-y-4 pl-4">
+            <li class="list-disc">
+              <strong
+                ><a
+                  href="https://simpleicons.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-foreground font-semibold">Simple Icons</a
+                ></strong
+              >
+              - licence <strong class="text-foreground font-semibold"
+                >Creative Commons Zero v1.0 Universal (CC0)</strong
+              >.
+            </li>
+
+            <li class="list-disc">
+              <strong
+                ><a
+                  href="https://lucide.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-foreground font-semibold">Lucide</a
+                ></strong
+              >
+              - licence <strong class="text-foreground font-semibold">ISC License</strong>.
+              Attribution recommandée : © Lucide Contributors.
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="5. Données personnelles">
+          <p class="mt-6">
+            Conformément au <strong class="text-foreground font-semibold"
+              >Règlement Général sur la Protection des Données (RGPD)</strong
+            > et à la <strong class="text-foreground font-semibold"
+              >loi Informatique et Libertés</strong
+            >, l'association ne collecte ni ne traite de données personnelles des visiteurs, sauf en
+            cas de prise de contact volontaire par e-mail.
+          </p>
+
+          <p class="mt-6">
+            Vous disposez d'un droit d'accès, de rectification et de suppression de vos données
+            personnelles. Pour exercer vos droits, vous pouvez nous contacter à :
+            <a
+              href="mailto:liguedesalternants@gmail.com"
+              class="text-primary hover:text-primary/60 font-semibold"
+              >liguedesalternants@gmail.com</a
+            >.
+          </p>
+        </Section>
+
+        <Section title="6. Cookies">
+          <p class="mt-6">
+            Le site ne dépose aucun cookie de suivi ni traceur publicitaire sur votre appareil.
+          </p>
+        </Section>
+
+        <Section title="7. Responsabilité">
+          <p class="mt-6">
+            L'association <strong class="text-foreground font-semibold">Ligue des Alternants</strong
+            > s'efforce d'assurer l'exactitude des informations diffusées sur son site, mais ne saurait
+            être tenue responsable des erreurs ou omissions. Elle ne peut être tenue responsable des
+            dommages directs ou indirects résultant de l'utilisation du site.
+          </p>
+        </Section>
+
+        <Section title="8. Références légales">
+          <ul class="marker:text-foreground mt-8 max-w-xl space-y-4 pl-4">
+            <li class="list-disc">
+              Article L111-1 du Code de la propriété intellectuelle : « L'auteur d'une œuvre de
+              l'esprit jouit sur cette œuvre, du seul fait de sa création, d'un droit de propriété
+              incorporelle exclusif et opposable à tous. »
+            </li>
+
+            <li class="list-disc">
+              Article 9 du Code civil : « Chacun a droit au respect de sa vie privée. »
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="9. Crédits">
+          <p class="mt-6">
+            Site réalisé par <strong class="text-foreground font-semibold"
+              >La Ligue des Alternants</strong
+            > - © {year}
+          </p>
+        </Section>
+      </div>
+    </div>
+  </div>
+</MainLayout>
