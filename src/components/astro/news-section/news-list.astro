@@ -1,7 +1,13 @@
 ---
-import { news } from './data';
-
 import NewsItem from './news-item.astro';
+
+import type News from '@/interfaces/news';
+
+interface Props {
+  news: News[];
+}
+
+const { news } = Astro.props;
 ---
 
 <div

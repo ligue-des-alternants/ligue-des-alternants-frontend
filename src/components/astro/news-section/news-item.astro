@@ -1,8 +1,10 @@
 ---
-import type { NewsItem } from './data';
+import { formatDate } from '@/lib/date';
+
+import type News from '@/interfaces/news';
 
 interface Props {
-  item: NewsItem;
+  item: News;
 }
 
 const { item } = Astro.props;
@@ -14,21 +16,25 @@ const { item } = Astro.props;
   itemtype="https://schema.org/NewsArticle"
 >
   <div class="flex items-center gap-x-4 text-xs">
-    <time datetime={item.datetime} class="text-muted-foreground" itemprop="datePublished">
-      {item.date}
+    <time datetime={item.publishedAt} class="text-muted-foreground" itemprop="datePublished">
+      {formatDate(item.publishedAt)}
     </time>
   </div>
 
   <div class="group relative grow">
     <h3 class="text-foreground group-hover:text-muted-foreground mt-3 text-lg/6 font-semibold">
-      <a href={item.href}>
+      <a href={`/actualites/${item.slug}`}>
         <span class="absolute inset-0" aria-hidden="true"></span>
         <span itemprop="headline">{item.title}</span>
       </a>
     </h3>
 
-    <p class="text-muted-foreground mt-5 line-clamp-3 text-sm/6" itemprop="description">
-      {item.description}
-    </p>
+    {
+      item.summary && (
+        <p class="text-muted-foreground mt-5 line-clamp-3 text-sm/6" itemprop="description">
+          {item.summary}
+        </p>
+      )
+    }
   </div>
 </article>

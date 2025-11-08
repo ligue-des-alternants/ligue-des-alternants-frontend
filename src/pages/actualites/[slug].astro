@@ -1,0 +1,43 @@
+---
+import { formatDate } from '@/lib/date';
+import { fetchNews } from '@/lib/strapi';
+
+import PageHeader from '@/components/astro/ui/page-header.astro';
+import BlocksContent from '@/components/react/ui/blocks-content';
+
+import Background from '@/layouts/background.astro';
+import MainLayout from '@/layouts/main-layout.astro';
+
+export async function getStaticPaths() {
+  const news = await fetchNews();
+
+  return news.map((newsItem) => {
+    return {
+      params: { slug: newsItem.slug },
+      props: { ...newsItem },
+    };
+  });
+}
+
+const news = Astro.props;
+const title = `Ligue des Alternants | ${news.title}`;
+const description = 'Découvrez les dernières actualités de la Ligue des Alternants.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="page">
+    <Background />
+
+    <div class="container">
+      <div class="mb-3 flex items-center gap-x-4 text-xs">
+        <time datetime={news.publishedAt} class="text-muted-foreground">
+          {formatDate(news.publishedAt)}
+        </time>
+      </div>
+
+      <PageHeader title={news.title} />
+
+      <BlocksContent content={news.content} />
+    </div>
+  </div>
+</MainLayout>

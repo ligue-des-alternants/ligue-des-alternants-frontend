@@ -1,12 +1,19 @@
 ---
 import NewsHeader from './news-header.astro';
 import NewsList from './news-list.astro';
+
+import type News from '@/interfaces/news';
+
+interface Props {
+  news: News[];
+}
+
+const { news } = Astro.props;
 ---
 
 <section class="bg-background py-24 sm:py-32">
   <div class="container">
     <NewsHeader />
-
-    <NewsList />
+    <NewsList news={news} />
   </div>
 </section>

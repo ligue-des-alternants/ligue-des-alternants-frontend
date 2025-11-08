@@ -1,9 +1,13 @@
 ---
+import { fetchNews } from '@/lib/strapi';
+
 import FeaturesSection from '@/components/astro/features-section/index.astro';
 import HeroSection from '@/components/astro/hero/index.astro';
 import NewsSection from '@/components/astro/news-section/index.astro';
 
 import MainLayout from '@/layouts/main-layout.astro';
+
+const news = await fetchNews();
 
 const title = 'Ligue des Alternants | Accompagner, aider et valoriser les études en alternance';
 const description =
@@ -13,5 +17,5 @@ const description =
 <MainLayout title={title} description={description}>
   <HeroSection />
   <FeaturesSection />
-  <NewsSection />
+  {news.length > 0 && <NewsSection news={news} />}
 </MainLayout>
