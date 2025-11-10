@@ -8,6 +8,7 @@
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
+    "postinstall": "node -e \"const fs = require('fs'); const path = require('path'); const dir = path.join(__dirname, 'public', 'uploads'); if (!fs.existsSync(dir)) { fs.mkdirSync(dir, { recursive: true }); console.log('Created uploads directory'); }\"",
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
